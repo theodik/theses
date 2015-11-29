@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Username</strong>
+  <%= @person.username %>
+</p>
+
+<p>
+  <strong>First name</strong>
+  <%= @person.name %>
+</p>
+
+<p>
+  <strong>Last name</strong>
+  <%= @person.surname %>
+</p>
+
+<% if @person.theses.any? %>
+    <p>
+      <strong>Theses</strong>
+    <ul>
+      <% @person.theses.each do |thesis| %>
+          <li><%= link_to thesis.title, thesis_path(thesis) %></li>
+      <% end %>
+    </ul>
+    </p>
+<% end %>
+
+<%= link_to 'Edit', edit_person_path(@person) %> |
+<%= link_to 'Back', people_path %>

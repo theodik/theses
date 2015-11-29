@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   resources :faculties
   resources :theses
+  resources :people
 
   root 'theses#index'
   # The priority is based upon order of creation: first created -> highest priority.
