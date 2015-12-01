@@ -7,7 +7,7 @@
 
 <p>
   <strong>Author:</strong>
-  <%= @thesis.author.full_name %>
+  <%= @thesis.author.try!(:full_name) %>
 </p>
 
 <p>

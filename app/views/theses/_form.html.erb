@@ -29,7 +29,7 @@
     </div>
     <div class="field">
       <%= f.label :author %><br>
-      <%= f.select :author_id, Person.all.map { |p| ["#{p.name} #{p.surname}", p.id] } %>
+      <%= f.select :author_id, Person.all.map { |p| [p.full_name, p.id] }, include_blank: true %>
     </div>
     <div class="actions">
       <%= f.submit %>
